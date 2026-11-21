@@ -1,7 +1,13 @@
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import uniform_filter
 import trimesh
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+INPUT_FILE = BASE_DIR / "data" / "farmer.txt"
+OUTPUT_FILE = BASE_DIR / "output" / "farmer.stl"
 
 '''
 Processing variables
@@ -23,7 +29,7 @@ zDelta = 0.1
 Load raw data
 '''
 
-rawData = np.loadtxt("farmer.txt")
+rawData = np.loadtxt(INPUT_FILE)
 
 '''
 Remove erroneous scans
@@ -257,6 +263,8 @@ mesh = trimesh.Trimesh(
 Export STL file
 '''
 
-mesh.export("farmer.stl")
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-print("STL exported successfully.")
+mesh.export(OUTPUT_FILE)
+
+print(f"STL exported successfully: {OUTPUT_FILE}")
