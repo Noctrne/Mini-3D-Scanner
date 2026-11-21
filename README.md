@@ -90,5 +90,8 @@ code assumes two step/dir drivers. Replace those parts to match your hardware.
 
 ## License
 
-No license has been chosen yet. All rights reserved by the author unless a
-license is added.
+Contributor-only. This repository is available to its contributors only. Use,
+copying, modification, or redistribution outside the contributor team is not
+permitted without written permission.
+
+Copyright (c) 2026 @Noctrne. All rights reserved.
